@@ -1,7 +1,7 @@
 Topapp
 
 
-- [Imagenes y vídeos](#imagenes-y-vídeos)
+- [framework](#framework)
 - [Motivación del proyecto](#motivación-del-proyecto)
 - [Requisitos:](#requisitos)
 - [Estructura del Proyecto](#estructura-del-proyecto)
@@ -13,11 +13,11 @@ Topapp
 - [Despliegue en produccion](#despliegue-en-produccion)
 - [Agradecimientos](#agradecimientos)
 
-# Imagenes y vídeos
+# framework
 
-<img src="../final-proyecto-topapp/img/uno_dos.jpg" alt="" width="300"/>
-<img src="../final-proyecto-topapp/img/cuatro_cinco.jpg" alt="" width="300"/>
-<img src="../final-proyecto-topapp/img/seis_siete.jpg" alt="" width="300"/>
+<img src="../final-proyecto-topapp/img/uno_dos.jpg" alt="" width="150"/>
+<img src="../final-proyecto-topapp/img/cuatro_cinco.jpg" alt="" width="150"/>
+<img src="../final-proyecto-topapp/img/seis_siete.jpg" alt="" width="150"/>
 
 # Motivación del proyecto
 Ser madre de un bebe de 1 año y ver lo difícil que es conciliar trabajo, estudio o un simple hobbie me ha llevado a crear una app para ayudar a conciliar. La falta de tiempo y recursos hacen que esperemos meses a entrar en una guardería, por eso el propósito de esta app es ahorrar tiempo e informar a los padres de todas las opciones que tienen según sus necesidades.
