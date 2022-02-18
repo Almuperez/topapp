@@ -15,9 +15,9 @@ Topapp
 
 # framework
 
-<img src="../final-proyecto-topapp/img/uno_dos.jpg" alt="" width="25"/>
-<img src="../final-proyecto-topapp/img/cuatro_cinco.jpg" alt="" width="25"/>
-<img src="../final-proyecto-topapp/img/seis_siete.jpg" alt="" width="25"/>
+<img src="../final-proyecto-topapp/img/uno_dos.jpg" alt="" width="200"/>
+<img src="../final-proyecto-topapp/img/cuatro_cinco.jpg" alt="" width="200"/>
+<img src="../final-proyecto-topapp/img/seis_siete.jpg" alt="" width="200"/>
 
 # Motivación del proyecto
 Ser madre de un bebe de 1 año y ver lo difícil que es conciliar trabajo, estudio o un simple hobbie me ha llevado a crear una app para ayudar a conciliar. La falta de tiempo y recursos hacen que esperemos meses a entrar en una guardería, por eso el propósito de esta app es ahorrar tiempo e informar a los padres de todas las opciones que tienen según sus necesidades.
@@ -40,17 +40,18 @@ final-project
     │    ├── src
     │    │    ├── lib
     │    │    ├── models
-    │    │    │        ├──niñera.model.ts : nombre, precio, zona, descripcion, horario.
-    │    │    │        ├──guarderia.model.ts: nombre, precio, zona, plazas disponibles, edades comprendidas, horario.
+    │    │    │        ├──admin.model.ts : nombre, precio, zona, edad, horario.
+    │    │    │        │ 
     │    │    │        └──reservas.model.ts: client_id, tipo, service_id, start_time, end_time
-    │    │    │               └──padres.model.ts: hijos, edades, zona, horario, rango de precio.
+    │    │    │        └──padres.model.ts: hijos, edades, zona, horario, rango de precio.
     │    │    │ 
     │    │    ├── routers
-    │    │    │     ├──niñera_router.ts
-    │    │    │     ├──guarderia_router.ts
+    │    │    │     ├──admin_router.ts
     │    │    │     └──reservas_router.ts: 
-    │    │    │     │          └──  GET/api/comparativa: lista comparativa
-    │    │    │     │          └── POST/api/comparativa: actualizar lista comparativa
+    │    │    │     │         └── GET/api/comparativa: lista comparativa
+    │    │    │     │         └── POST/api/comparativa: actualizar lista comparativa
+    │    │    │     │         └── Delete/api/comparativa: borrar 
+    │    │    │     │
     │    │    │     └──padres_router.ts
     │    │    │  
     │    │    │  
@@ -62,8 +63,9 @@ final-project
     │    │    └── server.ts
     │    └── package.json
     ├── Front
-    │    ├── sr
-    │    │    ├── models
+    │    ├── src
+    │    │    ├── components
+    │    │    │    └── formularios.tsx
     │    │    ├── lib
     │    │       
     │    └── package.json
