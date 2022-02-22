@@ -1,7 +1,7 @@
 Topapp
 
 
-- [framework](#framework)
+- [Framework](#framework)
 - [Motivación del proyecto](#motivación-del-proyecto)
 - [Requisitos:](#requisitos)
 - [Estructura del Proyecto](#estructura-del-proyecto)
@@ -13,7 +13,7 @@ Topapp
 - [Despliegue en produccion](#despliegue-en-produccion)
 - [Agradecimientos](#agradecimientos)
 
-# framework
+# Framework
 
 <img src="../final-proyecto-topapp/img/uno_dos.jpg" alt="" width="200"/>
 <img src="../final-proyecto-topapp/img/cuatro_cinco.jpg" alt="" width="200"/>

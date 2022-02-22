@@ -30,3 +30,6 @@ react fc: fc signifca function component.
 
 objetivo de clase de hoy: saber Como funciona y como implementarlo
 
+
+SEMANA QUE VIENE - miercoles : seed archivo , api con crud y modelos.
+
