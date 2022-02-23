@@ -1,11 +1,12 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface Kindergarden extends Document {
-  age: Number;
   location: String;
   schedule: Date;
   priceMonth: Number;
-  information: String;
+  tipo: String;
+  califacion: Number;
+  comedor: boolean;
 }
 
 const schema = new Schema({

@@ -1,21 +1,26 @@
 import mongoose, { Document, Schema } from "mongoose";
 
+
+//añadir parametro contacto
+//name del niño
+//auth0
+
 export interface Parents extends Document {
-  children: Number;
-  age: Number;
+  children: [] 
   location: String;
-  schedule: Date;
-  priceHour: Number;
-  priceMonth: Number;
+  phone: Number;
+  otherInformation: String;
+  
+ 
+  
 }
 
 const schema = new Schema({
   children: { type: Number, require: true },
-  age: { type: Number, required: true },
   location: { type: String, required: true },
-  schedule: { type: Date, required: true },
-  priceHour: { type: Number, required: true },
-  priceMonth: { type: Number, required: true },
+  otherInformation: String;
+  
+ 
 });
 
 export const Parents = mongoose.model<Parents>("Parents", schema);

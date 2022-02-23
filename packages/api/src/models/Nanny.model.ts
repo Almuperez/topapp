@@ -1,10 +1,14 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface Nanny extends Document {
-  age: Number;
+  datebirthday: Number;
+  gender: boolean;
   location: String;
   schedule: Date;
+  startDate: Date;
+  status: boolean;
   priceHour: Number;
+  calificación: Number;
 }
 
 const schema = new Schema({

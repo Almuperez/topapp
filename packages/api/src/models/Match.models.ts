@@ -10,6 +10,8 @@ export interface Booking extends Document {
   dateStart: Date;
   dateEnd: Date;
   totalprice: Number;
+  status: Boolean;
+  schedule: Date;
 }
 
 const schema = new Schema({
