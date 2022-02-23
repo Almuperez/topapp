@@ -1,9 +1,7 @@
 .DS_Store
-.history
-.prettierrc
 node_modules
 .env
 .parcel-cache
 dist
-packages
 text.md
+.next
