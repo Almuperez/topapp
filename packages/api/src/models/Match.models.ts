@@ -1,26 +1,26 @@
 import mongoose, { Document, Schema } from "mongoose";
 import { Kindergarden } from "./Kindergarden.models";
 import { Nanny } from "./Nanny.model";
-import { Parents } from "./Parents.models";
+import { Parent } from "./Parent.models";
 
-export interface Booking extends Document {
+export interface Match extends Document {
   nannyId: Nanny["_id"];
   kindergardenId: Kindergarden["_id"];
-  parentsId: Parents["_id"];
-  dateStart: Date;
-  dateEnd: Date;
+  parentId: Parent["_id"];
   totalprice: Number;
-  status: Boolean;
-  schedule: Date;
+  hasContacted: Boolean;
+  hasbooked: Boolean;
 }
 
 const schema = new Schema({
   nannyId: { type: Schema.Types.ObjectId, ref: "Nanny" },
   kindergardenId: { type: Schema.Types.ObjectId, ref: "Kindergarden" },
-  parentsId: { type: Schema.Types.ObjectId, ref: "Parents" },
-  dateStart: { type: Date, require: true },
-  dateEnd: { type: Date, require: true },
+  parentId: { type: Schema.Types.ObjectId, ref: "Parents" },
+
+  //a las niñeras les aparecera 5€/h y en las gaurderias 100€/month
   totalprice: { type: Number, require: true },
+  hasContacted: { type: Boolean },
+  hasbooked: { type: Boolean },
 });
 
-export const Booking = mongoose.model<Booking>("Booking", schema);
+export const Match = mongoose.model<Match>("Match", schema);

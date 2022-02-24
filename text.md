@@ -33,3 +33,23 @@ objetivo de clase de hoy: saber Como funciona y como implementarlo
 
 SEMANA QUE VIENE - miercoles : seed archivo , api con crud y modelos.
 
+
+... router
+
+
+// const list_nannies3 = (request: FastifyRequest, reply: FastifyReply) => {
+//   Nanny.find()
+//     .lean()
+//     .then((nannies) => {
+//       Parent.find()
+//         .lean()
+//         .then((parents) => console.log("parents"))
+//         .catch((error) => console.log("error"));
+//       reply.code(200).send(nannies);
+//     })
+//     .catch((error) => {
+//       reply.code(500).send({ message: error });
+//     });
+// };
+
+
