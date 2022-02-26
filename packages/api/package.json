@@ -5,10 +5,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "seed": "nodemon src/scripts/seed.ts"
+    "seed": "nodemon src/seed.ts"
   },
   "dependencies": {
     "dotenv": "^16.0.0",
+    "email-validator": "^2.0.4",
     "fastify": "^3.27.2",
     "fastify-cors": "^6.0.3",
     "mongoose": "^6.2.3",

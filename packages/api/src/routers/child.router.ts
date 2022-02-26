@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest, FastifyPluginAsync } from "fastify";
-import { Child } from "../models/child.model";
+import { Child } from "../models/Child.model";
 import { Parent } from "../models/Parent.models";
 
 const list_child = async (request: FastifyRequest, reply: FastifyReply) => {
@@ -80,10 +80,22 @@ const update_child_by_id = async (
   }
 };
 
+const delete_child_by_id = async (
+  request: FastifyRequest<{ Params: { id: string } }>,
+  reply: FastifyReply
+) => {
+  try {
+    const deletedChild = await Child.findByIdAndDelete(request.params.id);
+    reply.code(200).send({ message: "child deleted" });
+  } catch (error) {
+    reply.code(500).send({ message: error });
+  }
+};
+
 export const child_router: FastifyPluginAsync = async (app) => {
   app.get("/", list_child);
   app.get("/:id", get_child_byId);
   app.post("/", new_child);
   app.patch("/:id", update_child_by_id);
-  //app.delete("/:id", delete_child_by_id);
+  app.delete("/:id", delete_child_by_id);
 };

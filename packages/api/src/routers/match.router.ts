@@ -4,13 +4,34 @@ import { Match } from "../models/Match.models";
 import { Nanny } from "../models/Nanny.model";
 import { Parent } from "../models/Parent.models";
 
+const list_match = async (request: FastifyRequest, reply: FastifyReply) => {
+  try {
+    const matchs = await Match.find().lean();
+    reply.code(200).send(matchs);
+  } catch (error) {
+    reply.code(500).send({ message: error });
+  }
+};
+
+const get_match_byId = async (
+  request: FastifyRequest<{ Params: { id: string } }>,
+  reply: FastifyReply
+) => {
+  try {
+    const match = await Match.findById(request.params.id).lean();
+    reply.code(200).send(parent);
+  } catch (error) {
+    reply.code(500).send({ message: error });
+  }
+};
+
 const new_match = async (
   request: FastifyRequest<{
     Body: {
       nannyId?: string;
       kindergardenId?: string;
       parentId: string;
-      totalprice: number;
+      totalPrice: number;
     };
   }>,
   reply: FastifyReply
@@ -47,4 +68,49 @@ const new_match = async (
   } catch (error) {
     reply.code(500).send({ message: error });
   }
+};
+
+const update_match_by_id = async (
+  request: FastifyRequest<{
+    Params: { id: string };
+    Body: {
+      nannyId: string;
+      kindergardenId: string;
+      parentId: string;
+      totalprice: number;
+      hasContacted: boolean;
+      hasbooked: boolean;
+    };
+  }>,
+  reply: FastifyReply
+) => {
+  try {
+    const updatedMatch = await Match.findByIdAndUpdate(
+      request.params.id,
+      request.body
+    );
+    reply.code(200).send(updatedMatch);
+  } catch (error) {
+    reply.code(500).send({ message: error });
+  }
+};
+
+const delete_match_by_id = async (
+  request: FastifyRequest<{ Params: { id: string } }>,
+  reply: FastifyReply
+) => {
+  try {
+    const deletedMatch = await Match.findByIdAndDelete(request.params.id);
+    reply.code(200).send(deletedMatch);
+  } catch (error) {
+    reply.code(500).send({ message: error });
+  }
+};
+
+export const match_router: FastifyPluginAsync = async (app) => {
+  app.get("/", list_match);
+  app.get("/:id", get_match_byId);
+  app.post("/", new_match);
+  app.patch("/:id", update_match_by_id);
+  app.delete("/:id", delete_match_by_id);
 };

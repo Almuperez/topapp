@@ -1,9 +1,9 @@
 import mongoose, { Document, Schema } from "mongoose";
-import { Child } from "./child.model";
+import * as emailValidator from "email-validator";
 
 export interface Parent extends Document {
   name: String;
-  childrenIds: [Child["_id"]];
+  childrenIds: [String];
   location: String;
   phone: Number;
   email: String;
@@ -28,9 +28,8 @@ const schema = new Schema({
   phone: {
     type: Number,
     validate: {
-      validator: function (v: any) {
-        // return /\d{3}-\d{3}-\d{3}/.test(v);
-        v.match(/\d/g).length === 9;
+      validator: function (number: any) {
+        return /^\d*$/.test(number) && number.toString().length === 9;
       },
       message: (props: any) => `${props.value} is not a valid phone number!`,
     },
@@ -45,7 +44,7 @@ const schema = new Schema({
 
     validate: {
       validator: function (v: string) {
-        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        return emailValidator.validate(v);
       },
       message: "Please enter a valid email",
     },

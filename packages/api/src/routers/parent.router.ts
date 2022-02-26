@@ -1,5 +1,5 @@
 import { FastifyPluginAsync, FastifyRequest, FastifyReply } from "fastify";
-import { Child } from "../models/child.model";
+import { Child } from "../models/Child.model";
 import { Match } from "../models/Match.models";
 import { Parent } from "../models/Parent.models";
 

@@ -1,4 +1,5 @@
 import mongoose, { Document, Schema } from "mongoose";
+import * as emailValidator from "email-validator";
 
 // genero un array con el objeto day que es un numero del 1 al 7 y start que es un string y end que es un string -->será la hora en la que termine esa persona
 export type Day = {
@@ -78,9 +79,8 @@ const schema = new Schema({
   phone: {
     type: Number,
     validate: {
-      validator: function (v: any) {
-        // return /\d{3}-\d{3}-\d{3}/.test(v);
-        v.match(/\d/g).length === 9;
+      validator: function (number: any) {
+        return /^\d*$/.test(number) && number.toString().length === 9;
       },
       message: (props: any) => `${props.value} is not a valid phone number!`,
     },
@@ -95,7 +95,7 @@ const schema = new Schema({
 
     validate: {
       validator: function (v: string) {
-        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        return emailValidator.validate(v);
       },
       message: "Please enter a valid email",
     },

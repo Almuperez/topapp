@@ -2,7 +2,6 @@ import mongoose, { Document, Schema } from "mongoose";
 
 export interface Child extends Document {
   name: String;
-
   dateOfBirth: Date;
   gender: Boolean;
   otherInformation: [String];
