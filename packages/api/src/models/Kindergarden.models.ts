@@ -2,18 +2,18 @@ import mongoose, { Document, Schema } from "mongoose";
 import * as emailValidator from "email-validator";
 
 export interface Kindergarden extends Document {
-  name: String;
-  location: String;
-  openTime: String;
-  closeTime: String;
-  priceMonth: Number;
-  classInfo: String;
-  califacion: Number;
+  name: string;
+  location: string;
+  openTime: string;
+  closeTime: string;
+  priceMonth: number;
+  classInfo: string;
+  califacion: number;
   comedor: boolean;
-  img: String;
-  phone: Number;
-  email: String;
-  capicity: Number;
+  img: string;
+  phone: number;
+  email: string;
+  capicity: number;
 }
 
 const schema = new Schema({

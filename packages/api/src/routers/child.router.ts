@@ -54,7 +54,9 @@ const new_child = async (
     //pedimos que devuelva todo, hijo con id y parent id
 
     reply.code(200).send({ ...newChild, parentId: request.body.parentId });
-  } catch (error) {}
+  } catch (error) {
+    reply.code(500).send({ message: `Error creating child: ${error}` });
+  }
 };
 
 const update_child_by_id = async (
@@ -86,6 +88,15 @@ const delete_child_by_id = async (
 ) => {
   try {
     const deletedChild = await Child.findByIdAndDelete(request.params.id);
+
+    await Parent.findOneAndUpdate(
+      //usamos push cuando la propiedad es un array, para añadir el new child al parent buscando por el parentId
+
+      { childrenIds: { $in: [request.params.id] } },
+
+      { $pull: { childrenIds: request.params.id } }
+    );
+
     reply.code(200).send({ message: "child deleted" });
   } catch (error) {
     reply.code(500).send({ message: error });

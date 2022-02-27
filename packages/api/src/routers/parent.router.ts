@@ -6,6 +6,7 @@ import { Parent } from "../models/Parent.models";
 const list_parents = async (request: FastifyRequest, reply: FastifyReply) => {
   try {
     const parents = await Parent.find().lean();
+    console.log(parents);
     reply.code(200).send(parents);
   } catch (error) {
     reply.code(500).send({ message: error });
@@ -30,7 +31,7 @@ const new_parent = async (
   request: FastifyRequest<{
     Body: {
       name: string;
-      location: string;
+      location: Location;
       phone: number;
       email: string;
       otherInformation: string;
@@ -51,7 +52,7 @@ const update_parent_by_id = async (
     Params: { id: string };
     Body: {
       name: string;
-      location: string;
+      location: Location;
       phone: number;
       email: string;
       otherInformation: string;

@@ -1,13 +1,19 @@
 import mongoose, { Document, Schema } from "mongoose";
 import * as emailValidator from "email-validator";
 
+//typescript para definir los tipos que acepta una función. controlar que funciona.
+export type Location = {
+  name: string;
+  coordinates: [number];
+};
+
 export interface Parent extends Document {
-  name: String;
-  childrenIds: [String];
-  location: String;
-  phone: Number;
-  email: String;
-  otherInformation: String;
+  name: string;
+  childrenIds: [string];
+  location: string;
+  phone: number;
+  email: string;
+  otherInformation: string;
 }
 
 const schema = new Schema({
@@ -54,8 +60,14 @@ const schema = new Schema({
   otherInformation: {
     type: String,
     required: true,
-    minlength: [10, `The location must have a minimum length of 3 characters`],
-    maxlength: [50, `The location must have a maximun length of 15 characters`],
+    minlength: [
+      3,
+      `The information must have a minimum length of 3 characters`,
+    ],
+    maxlength: [
+      50,
+      `The information must have a maximun length of 15 characters`,
+    ],
   },
 });
 

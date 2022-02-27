@@ -3,23 +3,23 @@ import * as emailValidator from "email-validator";
 
 // genero un array con el objeto day que es un numero del 1 al 7 y start que es un string y end que es un string -->será la hora en la que termine esa persona
 export type Day = {
-  day: Number;
-  start: String;
-  end: String;
+  day: number;
+  start: string;
+  end: string;
 };
 
 export interface Nanny extends Document {
-  name: String;
+  name: string;
   dateOfBirth: Date;
-  gender: Boolean;
-  location: String;
+  gender: boolean;
+  location: string;
   availability: [Day];
   isActive: boolean;
-  priceHour: Number;
-  calificación: Number;
-  img: String;
-  phone: Number;
-  email: String;
+  priceHour: number;
+  calificación: number;
+  img: string;
+  phone: number;
+  email: string;
 }
 
 const schema = new Schema({

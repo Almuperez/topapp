@@ -4,18 +4,18 @@ import { Nanny } from "./Nanny.model";
 import { Parent } from "./Parent.models";
 
 export interface Match extends Document {
-  nannyId: Nanny["_id"];
-  kindergardenId: Kindergarden["_id"];
-  parentId: Parent["_id"];
-  totalprice: Number;
-  hasContacted: Boolean;
-  hasbooked: Boolean;
+  nannyId: string;
+  kindergardenId: string;
+  parentId: string;
+  totalprice: number;
+  hasContacted: boolean;
+  hasbooked: boolean;
 }
 
 const schema = new Schema({
   nannyId: { type: Schema.Types.ObjectId, ref: "Nanny" },
   kindergardenId: { type: Schema.Types.ObjectId, ref: "Kindergarden" },
-  parentId: { type: Schema.Types.ObjectId, ref: "Parents" },
+  parentId: { type: Schema.Types.ObjectId, ref: "Parent" },
 
   //a las niñeras les aparecera 5€/h y en las gaurderias 100€/month
   totalprice: { type: Number, require: true },
