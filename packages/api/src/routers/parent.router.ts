@@ -78,6 +78,8 @@ const delete_parent_by_id = async (
   try {
     const deletedParent = await Parent.findByIdAndDelete(request.params.id);
     //in quiere decir buscame
+
+    //de la tabla child dame todos los hijos que tengan el padre id y lo borras
     await Child.deleteMany({
       id: { $in: deletedParent?.childrenIds },
     });

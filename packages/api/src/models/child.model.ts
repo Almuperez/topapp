@@ -17,8 +17,8 @@ const schema = new Schema({
 
   dateOfBirth: {
     type: Date,
-    min: "2030-02-24",
-    max: "2007-02-24",
+    min: "2007-02-24",
+    max: "2030-02-24",
   },
 
   gender: {

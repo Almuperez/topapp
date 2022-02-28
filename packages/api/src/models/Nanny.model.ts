@@ -32,7 +32,8 @@ const schema = new Schema({
 
   dateOfBirth: {
     type: Date,
-    min: "2004-02-24",
+    //validar desde el front y en el back asegurarnos que la niñera tiene 18. pendiente
+    max: "2004-02-24",
   },
 
   gender: {
@@ -48,6 +49,8 @@ const schema = new Schema({
     name: {
       type: String,
     },
+
+    //objeto de longitud y latitud
     coordinates: [Number],
   },
 
@@ -69,7 +72,7 @@ const schema = new Schema({
     max: 15,
   },
 
-  calificación: { type: Number, min: 1, max: 5 },
+  qualification: { type: Number, min: 1, max: 5 },
 
   img: {
     type: String,

@@ -8,7 +8,7 @@ export interface Kindergarden extends Document {
   closeTime: string;
   priceMonth: number;
   classInfo: string;
-  califacion: number;
+  qualification: number;
   comedor: boolean;
   img: string;
   phone: number;
@@ -53,7 +53,7 @@ const schema = new Schema({
     },
   },
 
-  calificación: { type: Number, required: true },
+  qualification: { type: Number, min: 1, max: 5  },
 
   comedor: { type: Boolean },
 
