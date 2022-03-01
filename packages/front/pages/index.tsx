@@ -1,12 +1,11 @@
+//añadimos este import para que next no nos de problemas
 import React from "react";
 
-export default () => <p>Hello wolrd</p>;
+const IndexPage = () => (
+<div>
+<p>Bienvenido a Topapp, te ayudamos a conciliar</p>
+</div>
 
-// import Menu from "../components/Menu";
+);
 
-// export default () => (
-//   <main>
-//     <Menu />
-//     <p>Bienvenido a la conciliación que buscabas</p>
-//   </main>
-// );
+export default IndexPage;

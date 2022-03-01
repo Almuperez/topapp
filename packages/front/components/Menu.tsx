@@ -1,17 +1,24 @@
 import React from "react";
+import Link from "next/Link";
 
-const Menu = () => {
+const Menu = () => (
   <ul>
     <li>
-      <a href="/">Topapp info</a>
+      <Link href="/">Home</Link>
     </li>
     <li>
-      <a href="/admin">Admin</a>
+      <Link href="/topapp">Topapp info</Link>
     </li>
     <li>
-      <a href="/login">Login</a>
+      <Link href="/nanny">Soy nanny</Link>
     </li>
-  </ul>;
-};
+    <li>
+      <Link href="/guarderia">Soy guardería</Link>
+    </li>
+    <li>
+      <Link href="/padres">Soy padre</Link>
+    </li>
+  </ul>
+);
 
 export default Menu;
