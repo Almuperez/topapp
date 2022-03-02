@@ -3,7 +3,8 @@ import React from "react";
 
 const IndexPage = () => (
 <div>
-<p>Bienvenido a Topapp, te ayudamos a conciliar</p>
+<h2>Bienvenido a Topapp, te ayudamos a conciliar</h2>
+<img alt="" src="https://img.remediosdigitales.com/2605b3/colegio/450_1000.jpg" />
 </div>
 
 );

@@ -2,7 +2,7 @@ import React from "react";
 
 const Nanny = () => (
   <div>
-    <p>Hola nanny, rellena el siguiente formulario y empieza a trabajar :) </p>
+    <h2>Hola nanny, rellena el siguiente formulario y empieza a trabajar :) </h2>
   </div>
 );
 
