@@ -5,3 +5,4 @@ node_modules
 dist
 text.md
 .next
+.env.local
