@@ -38,7 +38,7 @@ const PrimaryLayout: React.FC<{ children: React.ReactNode }> = ({
       <div className="container">
         <Menu />
         <main>
-          <div style={{ padding: "20px 0", textAlign: "center" }}>
+          {/* <div style={{ padding: "20px 0", textAlign: "center" }}>
             {!user && (
               <a
                 style={{ margin: "5px" }}
@@ -60,7 +60,7 @@ const PrimaryLayout: React.FC<{ children: React.ReactNode }> = ({
                 </a>
               </>
             )}
-          </div>
+          </div> */}
           {children}
         </main>
       </div>

@@ -87,44 +87,20 @@ const Menu = () => (
           </Link>
         </li>
         <li className="nav-item">
-          <Link href="/nanny">
-            <a className="nav-link">Soy nanny</a>
+          <Link href="/login">
+            <a className="nav-link">Login</a>
           </Link>
         </li>
         <li className="nav-item">
-          <Link href="/guarderia">
-            <a className="nav-link">Soy guardería</a>
+          <Link href="/admin">
+            <a className="nav-link">Admin</a>
           </Link>
         </li>
-        <li className="nav-item dropdown">
-          <Link href="/padres">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Soy padre
-            </a>
-          </Link>
-          <div
-            className="dropdown-menu"
-            aria-labelledby="navbarDropdownMenuLink"
-          >
-            <Link href="/match">
-              <a className="dropdown-item" href="#">
-                Match
-              </a>
-            </Link>
-          </div>
-        </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link href="/match">
             <a className="nav-link">Haz tu match</a>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   </nav>
