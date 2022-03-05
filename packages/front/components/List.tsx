@@ -2,7 +2,7 @@ import React from "react";
 import InputItem from "./InputItem";
 import Item from "./Item";
 
-const MatchList = () => (
+const List = () => (
   <div>
     <Item />
     <Item />
@@ -13,4 +13,4 @@ const MatchList = () => (
   </div>
 );
 
-export default MatchList;
+export default List;

@@ -33,8 +33,8 @@ const Padre = () => {
             </a>
           </div>
           <div>
-            <Button variant="contained" color="primary" href="/match">
-              Ir a tu lista match
+            <Button variant="contained" color="primary" href="/list">
+              Ir a tu lista
             </Button>
           </div>
         </>

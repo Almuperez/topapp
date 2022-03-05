@@ -1,5 +1,7 @@
 import React from "react";
 import NannyForm from "../components/form/NannyForm";
+import InputItem from "../components/InputItem";
+import MatchList from "../components/List";
 
 const Nanny = () => (
   <div>
@@ -8,6 +10,7 @@ const Nanny = () => (
     </h2>
 
     <NannyForm />
+    <MatchList />
   </div>
 );
 

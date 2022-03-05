@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
 const InputItem = () => {
-  const [parent, setParent] = useState("padre");
+  const [match, setmacth] = useState("padre");
   const handleAddItem = () => {
     console.log("Adding item");
   };
 
   return (
     <div>
-      {/* El valor del input es lo que valga parent */}
-      <input value={parent} placeholder="Parents" />
+      {/* El valor del input  pasa a ser un componente controlado */}
+      <input value={match} placeholder="match" />
       <button onClick={handleAddItem} type="button">
         {" "}
-        Add item{" "}
+        match{" "}
       </button>
     </div>
   );
