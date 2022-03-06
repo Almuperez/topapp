@@ -20,13 +20,7 @@ import { Parent } from "./models/Parent.models";
   }
 
   // Create parent : comprobadas rutas ok
-  const parent1 = await Parent.create({
-    name: "Padre Uno",
-    location: "Puerto de Santa María",
-    phone: 660240488,
-    email: "almudena@gmail.com",
-    otherInformation: "Padre uno información",
-  });
+  
 
   const parent2 = await Parent.create({
     name: "Padre Dos",

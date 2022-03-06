@@ -1,0 +1,31 @@
+// import React from "react";
+// import tw from "twin.macro";
+// import { useUser } from "@auth0/nextjs-auth0";
+// import Link from "next/link";
+// // import { ButtonNav } from "./ButtonNav";
+// import { ButtonLog } from "./ButtonLog";
+
+// export const SessionNav = () => {
+//   const { user, error, isLoading } = useUser();
+
+//   if (isLoading) return <div>Loading...</div>;
+//   if (error) return <div>{error.message}</div>;
+//   console.log(user);
+//   return (
+//     <div tw="flex flex-row gap-3">
+//       {user ? (
+//         <Link href="/api/auth/logout">
+//           <a>
+//             <ButtonLog variant="light">Logout {user.email}</ButtonLog>
+//           </a>
+//         </Link>
+//       ) : (
+//         <Link href="/api/auth/login">
+//           <a>
+//             <ButtonLog variant="light">Login</ButtonLog>
+//           </a>
+//         </Link>
+//       )}
+//     </div>
+//   );
+// };

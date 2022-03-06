@@ -2,6 +2,7 @@ import { useUser } from "@auth0/nextjs-auth0";
 import React from "react";
 import Head from "next/head";
 import Menu from "../Menu";
+import Footer from "../Footer";
 //cuando realice el login auth0 importar aqui y todo lo ques conlleva la modificacion del archivo.
 
 //recibe props children (palabra reservada) exclusivamente que es un componente de react, FC signica function component.
@@ -66,7 +67,7 @@ const PrimaryLayout: React.FC<{ children: React.ReactNode }> = ({
       </div>
       <div className="container">
         <footer>
-          <p>pie de página</p>
+          <Footer />
         </footer>
       </div>
     </>

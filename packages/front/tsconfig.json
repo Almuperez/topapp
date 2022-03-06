@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/SessionParenttsx"  ],
   "exclude": [
     "node_modules"
   ]

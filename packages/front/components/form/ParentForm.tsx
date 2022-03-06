@@ -51,7 +51,9 @@ const ParentForm = () => {
         {...register("Información adicional", { maxLength: 50 })}
       />
 
-      <input type="submit" />
+      <button onClick={onSubmit} type="button">
+        Add parent
+      </button>
     </form>
   );
 };

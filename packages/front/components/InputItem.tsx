@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const InputItem = () => {
-  const [match, setmacth] = useState("padre");
+  const [item, setitem] = useState("padre");
   const handleAddItem = () => {
     console.log("Adding item");
   };
@@ -9,10 +9,10 @@ const InputItem = () => {
   return (
     <div>
       {/* El valor del input  pasa a ser un componente controlado */}
-      <input value={match} placeholder="match" />
+      <input value={item} placeholder="item" />
       <button onClick={handleAddItem} type="button">
         {" "}
-        match{" "}
+        item{" "}
       </button>
     </div>
   );

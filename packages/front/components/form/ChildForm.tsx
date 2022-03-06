@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
+import { addChild } from "../../lib/api";
 
 const errorColor = "#ff4d4f";
 
@@ -69,59 +70,67 @@ const ErrorMessageText = styled.p`
 `;
 
 const ChildForm = () => {
+  const [item, setItem] = useState();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+
+  const onSubmit = handleSubmit(async (item) => {
+    console.log("item", item);
+    const parent = await addChild(item);
+    reset();
+  });
 
   return (
-    <div>
-      <h3>Formulario hijo/s</h3>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <h3>Formulario hijo/s</h3>
 
-      <FlexForm onSubmit={handleSubmit(onSubmit)}>
-        <Row>
-          <Column>
-            <CustomInput
-              type="text"
-              placeholder="Nombre"
-              {...register("Nombre", { required: true, maxLength: 80 })}
-            />
-          </Column>
-          <Column>
-            <select {...register("Fecha de nacimiento", { required: true })}>
-              <option value="0 a 1 año">0 a 1 año</option>
-              <option value=" 2 a 3 años"> 2 a 3 años</option>
-              <option value=" 4 a 5 años"> 4 a 5 años</option>
-              <option value=" >5 años"> mayor de 5 años</option>
-            </select>
-          </Column>
+        <FlexForm onSubmit={handleSubmit(onSubmit)}>
+          <Row>
+            <Column>
+              <CustomInput
+                type="text"
+                placeholder="Nombre"
+                {...register("Nombre", { required: true, maxLength: 80 })}
+              />
+            </Column>
+            <Column>
+              <select {...register("Fecha de nacimiento", { required: true })}>
+                <option value="0 a 1 año">0 a 1 año</option>
+                <option value=" 2 a 3 años"> 2 a 3 años</option>
+                <option value=" 4 a 5 años"> 4 a 5 años</option>
+                <option value=" >5 años"> mayor de 5 años</option>
+              </select>
+            </Column>
 
-          <Column>
-            <select {...register("Género", { required: true })}>
-              <option value="Niña">Niña</option>
-              <option value=" Niño"> Niño</option>
-            </select>
-          </Column>
+            <Column>
+              <select {...register("Género", { required: true })}>
+                <option value="Niña">Niña</option>
+                <option value=" Niño"> Niño</option>
+              </select>
+            </Column>
 
-          <Column>
-            <CustomInput
-              type="text"
-              placeholder="Información adicional"
-              {...register("Información adicional", { maxLength: 50 })}
-            />
-          </Column>
-        </Row>
+            <Column>
+              <CustomInput
+                type="text"
+                placeholder="Información adicional"
+                {...register("Información adicional", { maxLength: 50 })}
+              />
+            </Column>
+          </Row>
 
-        <Row>
-          <Column>
-            <CustomBtn type="submit">Enviar</CustomBtn>
-          </Column>
-        </Row>
-      </FlexForm>
-    </div>
+          <Row>
+            <button onClick={onSubmit} type="button">
+              Add child
+            </button>
+          </Row>
+        </FlexForm>
+      </div>
+    </form>
   );
 };
 

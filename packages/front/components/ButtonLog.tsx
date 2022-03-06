@@ -1,17 +1,15 @@
 import React from "react";
 import { useUser } from "@auth0/nextjs-auth0";
 import Button from "@mui/material/Button";
-import ParentForm from "../components/form/ParentForm";
-import ButtonLog from "../components/ButtonLog";
+import ParentForm from "./form/ParentForm";
 
-const Padre = () => {
+const ButtonNav = () => {
   const { user } = useUser();
   console.log(user);
 
   return (
     <div>
-      <ButtonLog />
-      {/* <h2>Soy padre y busco conciliar</h2>
+      <h2>Soy padre y busco conciliar</h2>
       {!user && (
         <a
           style={{ margin: "5px" }}
@@ -40,9 +38,9 @@ const Padre = () => {
             </Button>
           </div>
         </>
-      )} */}
+      )}
     </div>
   );
 };
 
-export default Padre;
+export default ButtonNav;

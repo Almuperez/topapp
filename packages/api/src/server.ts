@@ -2,6 +2,7 @@ import fastify from "fastify";
 import { main_app } from "./app";
 import { PORT } from "./config";
 
+
 const server = fastify({
   logger: {
     prettyPrint: true,
