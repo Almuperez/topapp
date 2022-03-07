@@ -40,6 +40,7 @@ const new_parent = async (
   reply: FastifyReply
 ) => {
   try {
+    console.log("newparent");
     const newParent = await Parent.create(request.body);
     reply.code(200).send(newParent);
   } catch (error) {

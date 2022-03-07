@@ -11,7 +11,7 @@ export type Day = {
 export interface Nanny extends Document {
   name: string;
   dateOfBirth: Date;
-  gender: boolean;
+  gender: string;
   location: string;
   availability: [Day];
   isActive: boolean;

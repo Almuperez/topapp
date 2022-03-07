@@ -6,24 +6,29 @@ import { parent_router } from "./routers/parent.router";
 import { match_router } from "./routers/match.router";
 import { main_router } from "./routers/main_routers";
 import connectDB from "./lib/db";
-import {AUTH0} from "./config";
+import { AUTH0 } from "./config";
 import fastifyAuth0Verify from "fastify-auth0-verify";
+import fastifyCors from "fastify-cors";
+import blipp from "fastify-blipp";
 
 export const main_app: FastifyPluginAsync = async (app) => {
-connectDB();
+  console.log("comprobando api");
+  connectDB();
+  //blipp sirve para ver en la terminal a que ruta se llama
+  await app.register(blipp);
+  await app.register(fastifyCors);
 
-await app.register(fastifyAuth0Verify, {
-  domain: AUTH0.DOMAIN,
-  audience: AUTH0.AUDIENCE,
-});
+  await app.register(fastifyAuth0Verify, {
+    domain: AUTH0.DOMAIN,
+    audience: AUTH0.AUDIENCE,
+  });
 
-app.get('/verify', {
-  handler(request, reply) {
-    reply.send(request.user);
-  },
-  preValidation: app.authenticate,
-});
-
+  app.get("/verify", {
+    handler(request, reply) {
+      reply.send(request.user);
+    },
+    preValidation: app.authenticate,
+  });
 
   app.register(main_router);
   app.register(nanny_router, { prefix: "/nanny" });
@@ -32,10 +37,5 @@ app.get('/verify', {
   app.register(kindergarden_router, { prefix: "/kindergarden" });
   app.register(match_router, { prefix: "/match" });
 
-
-
-
-
-
-
+  app.blipp();
 };
