@@ -23,32 +23,32 @@ const ParentForm = () => {
       <input
         type="text"
         placeholder="Nombre"
-        {...register("Nombre", { required: true, maxLength: 80 })}
+        {...register("name", { required: true, maxLength: 80 })}
       />
       <input
         type="text"
         placeholder="Email"
-        {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
       />
       <input
         type="tel"
         placeholder="Teléfono"
-        {...register("Teléfono", { required: true, maxLength: 9 })}
+        {...register("phone", { required: true, maxLength: 9 })}
       />
       <input
         type="text"
         placeholder="Localización"
-        {...register("Localización", { required: true })}
+        {...register("location", { required: true })}
       />
-      <input
+      {/* <input
         type="number"
         placeholder="Número de hijos"
         {...register("Número de hijos", { required: true })}
-      />
+      /> */}
       <input
         type="text"
         placeholder="Información adicional"
-        {...register("Información adicional", { maxLength: 50 })}
+        {...register("otherInformation", { maxLength: 50 })}
       />
 
       <button onClick={onSubmit} type="button">

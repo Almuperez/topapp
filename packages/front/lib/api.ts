@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 
-export const api_client = axios.create({ baseURL: "http://127.0.0.1:3001" });
-export const api = axios.create();
+export const api = axios.create({ baseURL: "http://127.0.0.1:3001" });
+// export const api = axios.create();
 
 //personalizamos la api, todas las peticiones que haga ban a aser siempre a la direccion que indico.
 
@@ -15,6 +15,7 @@ export const getParent = async () => {
 };
 
 export const addParent = async (data) => {
+  console.log("comprobando", data);
   const res = await api.post("/parent", data);
   console.log(res);
   return res.data;
@@ -31,7 +32,7 @@ export const addChild = async (data) => {
   return res.data;
 };
 
-export const getNanny = async () => {
+export const getNannies = async () => {
   const res = await api.get("/nanny");
   console.log(res);
   return res.data;
