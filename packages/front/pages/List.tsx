@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-import Nannies from "../components/nannies";
+import Nannies from "../components/NanniesList";
 
 const MyList = () => (
   <div>
