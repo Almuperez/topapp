@@ -16,6 +16,7 @@ export const main_app: FastifyPluginAsync = async (app) => {
   connectDB();
   //blipp sirve para ver en la terminal a que ruta se llama
   await app.register(blipp);
+  //capa de seguridad extra, si no lo pones te indica el error dominios cruzados.
   await app.register(fastifyCors);
 
   await app.register(fastifyAuth0Verify, {

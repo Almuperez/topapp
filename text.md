@@ -53,3 +53,18 @@ SEMANA QUE VIENE - miercoles : seed archivo , api con crud y modelos.
 // };
 
 
+
+
+
+// Padres login:
+si el usuario se ha logado (userid) en el modelo de parent añadir user id y si alguien con ese user id ha rellenado un fomrulario, enseñale las nannies. o añadir un boleano registro completado ve a formulario, si lo ha rellenado lista de nannies:
+
+if user {
+    registarte en la app
+}
+if user pero no formulario{
+    rellena el formulario
+}
+if not user{
+    login
+}
