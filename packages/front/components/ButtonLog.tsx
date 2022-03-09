@@ -32,15 +32,9 @@ const ButtonNav = () => {
               Rellenar formulario hijo
             </a>
           </div>
-          <div>
-            <Button variant="contained" color="primary" href="/list">
-              Ir a tu lista
-            </Button>
-          </div>
         </>
       )}
     </div>
   );
 };
-
 export default ButtonNav;

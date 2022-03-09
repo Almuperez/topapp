@@ -41,6 +41,13 @@ const Padre = () => {
           </div>
         </>
       )} */}
+      {/* if (ParentForm isSubmited() && ParentForm()) { */}
+      <Button variant="contained" color="primary" href="/listNannies">
+        Buscar Nanny
+      </Button>
+      <Button variant="contained" color="primary" href="/lisKindergarden">
+        Buscar Kindergarden
+      </Button>
     </div>
   );
 };

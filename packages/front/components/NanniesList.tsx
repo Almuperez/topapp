@@ -1,8 +1,9 @@
 // TRAERME FUNCION GETNANNIES
 // USE EFFECT
+import { Card } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import { getNannies } from "../lib/api";
-import Item from "./Item";
+import ItemNannie from "./ItemNanny";
 
 const Nannies = () => {
   const [nannies, setNannies] = useState([]);
@@ -19,13 +20,29 @@ const Nannies = () => {
   }, []);
 
   return (
-    <div>
-      <p>TENEMOS UN TOTAL DE {nannies.length}</p>
-      {nannies.map((nanny) => {
-        console.log("one nanny ==>", nanny);
-        return <Item name={nanny.name} price={nanny.priceHour} />;
-      })}
-    </div>
+    <Card className="card">
+      <div className="card-body">
+        <h3 className="card-title">
+          TENEMOS UN TOTAL DE {nannies.length} NANNIES
+        </h3>
+        <p className="card-text"></p>
+        {nannies.map((nanny) => {
+          console.log("one nanny ==>", nanny);
+          return (
+            <ItemNannie
+              name={nanny.name}
+              price={nanny.priceHour}
+              dateOfBirth={nanny.dateOfBirth}
+              gender={nanny.gender}
+              // availability={nanny.availability}
+              // location={nanny.location}
+              phone={nanny.phone}
+              email={nanny.email}
+            />
+          );
+        })}
+      </div>
+    </Card>
   );
 };
 

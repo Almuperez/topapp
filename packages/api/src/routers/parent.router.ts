@@ -44,6 +44,7 @@ const new_parent = async (
     const newParent = await Parent.create(request.body);
     reply.code(200).send(newParent);
   } catch (error) {
+    console.log(error)
     reply.code(500).send({ message: error });
   }
 };

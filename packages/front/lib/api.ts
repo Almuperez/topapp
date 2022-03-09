@@ -21,16 +21,17 @@ export const addParent = async (data) => {
   return res.data;
 };
 
-export const getChild = async () => {
-  const res = await api.get("/child");
-  console.log(res);
-  return res.data;
-};
-export const addChild = async (data) => {
-  const res = await api.post("/child", data);
-  console.log(res);
-  return res.data;
-};
+// export const getChild = async () => {
+//   const res = await api.get("/child");
+//   console.log(res);
+//   return res.data;
+// };
+
+// export const addChild = async (data) => {
+//   const res = await api.post("/child", data);
+//   console.log(res);
+//   return res.data;
+// };
 
 export const getNannies = async () => {
   const res = await api.get("/nanny");
@@ -39,6 +40,18 @@ export const getNannies = async () => {
 };
 export const addNanny = async (data) => {
   const res = await api.post("/nanny", data);
+  console.log(res);
+  return res.data;
+};
+
+export const getKindergardens = async () => {
+  const res = await api.get("/kindergarden");
+  console.log(res);
+  return res.data;
+};
+
+export const newMatch = async () => {
+  const res = await api.post("/match");
   console.log(res);
   return res.data;
 };

@@ -1,17 +1,17 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-import Nannies from "../components/NanniesList";
+import Kindergardens from "../components/KindergardenList";
 
-const MyList = () => (
+const ListKindergardens = () => (
   <div>
     <h2>Revisa y elige con quien haces Match </h2>
 
     {/* <List /> */}
-    <Nannies />
+    <Kindergardens />
 
     <Button variant="outlined">Match</Button>
   </div>
 );
 
-export default MyList;
+export default ListKindergardens;

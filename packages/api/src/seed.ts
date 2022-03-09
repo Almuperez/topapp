@@ -165,19 +165,19 @@ import { Parent } from "./models/Parent.models";
     email: "kindergarden1@gmail.com",
   });
 
-  // const kindergarden2 = await Kindergarden.create({
-  //   name: "Kindergarden 2",
-  //   location: "Rota",
-  //   openTime: "9:00",
-  //   closeTime: "13:00",
-  //   priceMonth: 300,
-  //   classInfo: "Publica",
-  //   comedor: false,
-  //   img: "image URL Kindergarden 2",
-  //   phone: 764987236,
-  //   capacity: 10,
-  //   email: "kindergarden2@gmail.com",
-  // });
+  const kindergarden2 = await Kindergarden.create({
+    name: "Kindergarden 2",
+    location: "Rota",
+    openTime: "9:00",
+    closeTime: "13:00",
+    priceMonth: 300,
+    classInfo: "Publica",
+    comedor: false,
+    img: "image URL Kindergarden 2",
+    phone: 764987236,
+    capacity: 10,
+    email: "kindergarden2@gmail.com",
+  });
 
   // create children
 
