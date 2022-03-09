@@ -27,11 +27,11 @@ export const addParent = async (data) => {
 //   return res.data;
 // };
 
-// export const addChild = async (data) => {
-//   const res = await api.post("/child", data);
-//   console.log(res);
-//   return res.data;
-// };
+export const addChild = async (data) => {
+  const res = await api.post("/child", data);
+  console.log(res);
+  return res.data;
+};
 
 export const getNannies = async () => {
   const res = await api.get("/nanny");
@@ -50,8 +50,13 @@ export const getKindergardens = async () => {
   return res.data;
 };
 
-export const newMatch = async () => {
-  const res = await api.post("/match");
+//post recibe dos argumento, ¿que ruta? y el body, que es data
+export const newMatch = async (data) => {
+  const res = await api.post("/match", data);
   console.log(res);
   return res.data;
 };
+
+// export const getOneNanny = async (id) => {
+//   const res = await api.get(`/nanny/${id}`);
+// };

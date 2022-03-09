@@ -1,7 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { newMatch } from "../lib/api";
 import { getUserId } from "../lib/redux/store";
+import data from "../pages/api/data";
 
 const ItemWrap = styled.div`
   padding: 4px;
@@ -25,7 +27,7 @@ const Button = styled.button`
 // };
 
 type ItemProps = {
-  serviceId?: string;
+  nannyId?: string;
   price?: number;
   name?: string;
   dateOfBirth?: string;
@@ -43,7 +45,7 @@ type ItemProps = {
 };
 
 const ItemNannie = ({
-  serviceId,
+  nannyId,
   price,
   name,
   dateOfBirth,
@@ -53,12 +55,23 @@ const ItemNannie = ({
   phone,
   email,
 }: ItemProps) => {
-  //
+  //Use selectoy le pide que de todo lo que tenga ene stado global. y el userID es del padre
   const userId = useSelector(getUserId);
-  console.log(userId);
-  const addToMyList = () => {
-    //llamar a match route new_match,
-    // con el id de serviceId
+  console.log("Id padre", userId);
+  console.log("Id nannie", nannyId);
+  const addMatch = () => {
+    const newMatchInfo = {
+      nannyId,
+      parentId: userId,
+      totalPrice: price,
+    };
+    newMatch(newMatchInfo)
+      .then((res) => {
+        console.log("respuesta", res);
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
   };
   return (
     <ItemWrap>
@@ -71,7 +84,7 @@ const ItemNannie = ({
       <p>phone: {phone}</p>
       <p>email:{email}</p>
 
-      <Button onClick={addToMyList}>MATCH</Button>
+      <Button onClick={addMatch}>MATCH</Button>
     </ItemWrap>
   );
 };

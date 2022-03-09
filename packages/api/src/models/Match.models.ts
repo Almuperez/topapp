@@ -7,7 +7,7 @@ export interface Match extends Document {
   nannyId: string;
   kindergardenId: string;
   parentId: string;
-  totalprice: number;
+  totalPrice: number;
   hasContacted: boolean;
   hasbooked: boolean;
 }
@@ -18,7 +18,7 @@ const schema = new Schema({
   parentId: { type: Schema.Types.ObjectId, ref: "Parent" },
 
   //a las niñeras les aparecera 5€/h y en las gaurderias 100€/month
-  totalprice: { type: Number, require: true },
+  totalPrice: { type: Number, require: true },
   hasContacted: { type: Boolean },
   hasbooked: { type: Boolean },
 });

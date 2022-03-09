@@ -45,7 +45,7 @@ const ItemKindergarden = ({
       <p>closeTime: {closeTime}</p>
       <p>priceMonth: {priceMonth}</p>
       <p>classInfo: {classInfo}</p>
-      <p>comedor:{comedor}</p>
+      <p>comedor:{comedor ? "si" : "no"}</p>
       <p>phone: {phone}</p>
       <p>email:{email}</p>
       <p>capacity:{capacity}</p>

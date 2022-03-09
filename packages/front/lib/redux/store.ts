@@ -1,16 +1,18 @@
 import { createSelector } from "reselect";
 import { createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const initState = {
   user: { id: null, name: "" },
-  match: [
-    {
-      _id: 0,
-      nannyId: "",
-      parentId: "",
-    },
-  ],
+  // match: [
+  //   {
+  //     _id: 0,
+  //     nannyId: "",
+  //     parentId: "",
+  //   },
+  // ],
 };
 
 //action type DEFINIFO EN LINEA 30
@@ -40,6 +42,7 @@ export const addUserInfo = ({ userId, name }) => ({
   name,
 });
 
+//https://redux-toolkit.js.org/api/createSelector
 //selector: llamo a una funcion para que me de algo especifico como por ejemplo el id del padre
 export const getUserInfo = (state) => {
   return state.user;
@@ -49,7 +52,22 @@ export const getUserId = createSelector(getUserInfo, (user) => {
   return user.id;
 });
 
-export const store = createStore(rootReducer, composeWithDevTools());
+//con el persist hacemos que cuando refresque la pagina el estaod se quede guardaod no lo pierdo
+//persistSrote(store, [config, callback])
+const persistConfig = {
+  key: "root",
+  storage,
+};
+
+//https://www.npmjs.com/package/redux-persist
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export default () => {
+  const store = createStore(persistedReducer, composeWithDevTools());
+  const persistor = persistStore(store);
+  return { store, persistor };
+};
 
 //redux es una funcion que recibe accion y estado, y devuelve un nuevo estado
 //Que la store englobe todo.

@@ -45,7 +45,7 @@ const Padre = () => {
       <Button variant="contained" color="primary" href="/listNannies">
         Buscar Nanny
       </Button>
-      <Button variant="contained" color="primary" href="/lisKindergarden">
+      <Button variant="contained" color="primary" href="/listKindergarden">
         Buscar Kindergarden
       </Button>
     </div>

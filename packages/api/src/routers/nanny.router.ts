@@ -94,6 +94,7 @@ const delete_nanny_by_id = async (
 
 export const nanny_router: FastifyPluginAsync = async (app) => {
   app.get("/", list_nannies);
+  //los dos puntos antes del id indican que es un parametro que quiere
   app.get("/:id", get_nanny_byId);
   app.post("/", new_nanny);
   app.patch("/:id", update_nanny_by_id);

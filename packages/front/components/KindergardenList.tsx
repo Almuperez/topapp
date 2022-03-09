@@ -20,12 +20,13 @@ const Kindergardens = () => {
     <div>
       <p>TENEMOS UN TOTAL DE {kindergardens.length} GUARDERIAS</p>
       {kindergardens.map((kindergarden) => {
+        console.log("kindergarden", kindergarden);
         return (
           <ItemKindergarden
             name={kindergarden.name}
             openTime={kindergarden.openTime}
             closeTime={kindergarden.closeTime}
-            priceMonth={kindergarden.pricemonth}
+            priceMonth={kindergarden.priceMonth}
             classInfo={kindergarden.classInfo}
             comedor={kindergarden.comedor}
             phone={kindergarden.phone}

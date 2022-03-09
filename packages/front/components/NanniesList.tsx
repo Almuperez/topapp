@@ -30,6 +30,7 @@ const Nannies = () => {
           console.log("one nanny ==>", nanny);
           return (
             <ItemNannie
+              nannyId={nanny._id}
               name={nanny.name}
               price={nanny.priceHour}
               dateOfBirth={nanny.dateOfBirth}
