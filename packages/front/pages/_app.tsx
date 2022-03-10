@@ -1,14 +1,13 @@
 import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { UserProvider } from "@auth0/nextjs-auth0";
-import { SWRConfig } from "swr";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
 import configureStore from "../lib/redux/store";
 import PrimaryLayout from "../components/base/layouts/PrimaryLayout";
 
-import { fetcher } from "../lib/fetcher";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const { store, persistor } = configureStore();
 
@@ -22,18 +21,12 @@ const MyApp = ({ Component, pageProps, router, initialUser, hello }) => {
     // engloba la app bajo redux
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        {/* <SWRConfig>
-          value=
-          {{
-            refreshInterval: 3000,
-            fetcher,
-          }} */}
         {/* //toda la app esta englobada por userProvider que lo da auth0 */}
         <UserProvider user={initialUser}>
           {/* //PrimaryLayaout es donde generemos todo el menu  */}
           <PrimaryLayout>
             {/* camibar estilos, puesto estos para no olvidar . lo que hacen es ir desapareciendo*/}
-            <style jsx>
+            {/* <style jsx>
               {`
                 main {
                   position: relative;
@@ -48,7 +41,7 @@ const MyApp = ({ Component, pageProps, router, initialUser, hello }) => {
                   transform: translateX(-100%);
                 }
               `}
-            </style>
+            </style> */}
 
             {/* estilos para el menu */}
             <main>
@@ -62,14 +55,15 @@ const MyApp = ({ Component, pageProps, router, initialUser, hello }) => {
                   transitionname="app-page"
                 >
                   <div className="page">
+                    {/* <ChakraProvider> */}
                     <Component {...pageProps} />
+                    {/* </ChakraProvider> */}
                   </div>
                 </CSSTransition>
               </TransitionGroup>
             </main>
           </PrimaryLayout>
         </UserProvider>
-        {/* </SWRConfig> */}
       </PersistGate>
     </Provider>
   );

@@ -38,32 +38,7 @@ const PrimaryLayout: React.FC<{ children: React.ReactNode }> = ({
       </div>
       <div className="container">
         <Menu />
-        <main>
-          {/* <div style={{ padding: "20px 0", textAlign: "center" }}>
-            {!user && (
-              <a
-                style={{ margin: "5px" }}
-                href="/api/auth/login"
-                className="btn btn-primary"
-              >
-                Login
-              </a>
-            )}
-            {user && (
-              <>
-                <img alt="" src={user.picture} width="38" className="rounded" />
-                <a
-                  style={{ margin: "5px" }}
-                  href="/api/auth/logout"
-                  className="btn btn-primary"
-                >
-                  Logout {user.email}
-                </a>
-              </>
-            )}
-          </div> */}
-          {children}
-        </main>
+        <main>{children}</main>
       </div>
       <div className="container">
         <footer>

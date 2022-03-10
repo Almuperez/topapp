@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { addChild } from "../../lib/api";
+import { Heading } from "@chakra-ui/react";
+import { Card } from "react-bootstrap";
 
 const errorColor = "#ff4d4f";
 
@@ -86,8 +88,10 @@ const ChildForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <h3>Formulario hijo/s</h3>
+      <Card border="info" style={{ width: "40rem" }}>
+        <Heading margin="40" as="h4" size="md" color="grey">
+          Indica la información de tu niñ@/s
+        </Heading>
 
         <FlexForm onSubmit={handleSubmit(onSubmit)}>
           <Row>
@@ -129,7 +133,7 @@ const ChildForm = () => {
             </button>
           </Row>
         </FlexForm>
-      </div>
+      </Card>
     </form>
   );
 };

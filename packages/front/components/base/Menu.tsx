@@ -1,67 +1,8 @@
 import React from "react";
 import Link from "next/Link";
-import { Nav } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 
 const Menu = () => (
-  // <ul>
-  //   <li>
-  //     <Link href="/topapp">Topapp info</Link>
-  //   </li>
-  //   <li>
-  //     <Link href="/nanny">Soy nanny</Link>
-  //   </li>
-  //   <li>
-  //     <Link href="/guarderia">Soy guardería</Link>
-  //   </li>
-  //   <li>
-  //     <Link href="/padres">Soy padre</Link>
-  //   </li>
-  // </ul>
-
-  // <Nav className="navbar navbar-expand-lg navbar-light bg-ligh">
-  //   <div className="container">
-  // <Link href="/">
-  //   <a className="navbar-brand">Home</a>
-  // </Link>
-  //   </div>
-  //   <div className="collapse navbar-collapse" id="navbarSupportedContent">
-  //     <ul className="navbar-nav mr-auto">
-  //       <li className="nav-item active">
-  // <Link href="/topapp">
-  //   <a className="nav-link">Topapp</a>
-  // </Link>
-  //       </li>
-  //       <li className="nav-item">
-  // <Link href="/nanny">
-  //   <a className="nav-link">Soy nanny</a>
-  // </Link>
-  //       </li>
-  //       <li className="nav-item">
-  // <Link href="/guarderia">
-  //   <a className="nav-link">Soy guarderia</a>
-  // </Link>
-  //       </li>
-  //       <li className="nav-item dropdown ">
-  //         <Link
-  //           href="/padres"
-  //           id="navbarDropdownMenuLink"
-  //           data-toggle="dropdown"
-  //           aria-haspopup="true"
-  //           aria-expanded="false"
-  //         >
-  //           <a className="nav-link dropdown-toggle">Soy padre</a>
-  //         </Link>
-  //         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-  //           <Link href="/match">
-  //             <a className="dropdown-item">Match</a>
-  //           </Link>
-  //           <div className="dropdown-divider"></div>
-  //         </div>
-  //       </li>
-  //     </ul>
-  //   </div>
-  // </Nav>
-
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <Link href="/">
       <a className="navbar-brand">Home</a>
