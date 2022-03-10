@@ -27,6 +27,7 @@ const get_parent_byId = async (
 };
 
 //el body serán los imput que tendre que rellenar en foumulario
+//post recibe dos argumento, ¿que ruta? y el body, que es data
 const new_parent = async (
   request: FastifyRequest<{
     Body: {

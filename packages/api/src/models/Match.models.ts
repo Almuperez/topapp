@@ -9,7 +9,7 @@ export interface Match extends Document {
   parentId: string;
   totalPrice: number;
   hasContacted: boolean;
-  hasbooked: boolean;
+  hasBooked: boolean;
 }
 
 const schema = new Schema({
@@ -20,7 +20,7 @@ const schema = new Schema({
   //a las niñeras les aparecera 5€/h y en las gaurderias 100€/month
   totalPrice: { type: Number, require: true },
   hasContacted: { type: Boolean },
-  hasbooked: { type: Boolean },
+  hasBooked: { type: Boolean },
 });
 
 export const Match = mongoose.model<Match>("Match", schema);

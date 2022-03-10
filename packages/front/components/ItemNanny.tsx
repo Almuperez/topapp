@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { newMatch } from "../lib/api";
 import { getUserId } from "../lib/redux/store";
-import data from "../pages/api/data";
+import data from "../pages/api/nanny";
 
 const ItemWrap = styled.div`
   padding: 4px;
@@ -55,7 +55,7 @@ const ItemNannie = ({
   phone,
   email,
 }: ItemProps) => {
-  //Use selectoy le pide que de todo lo que tenga ene stado global. y el userID es del padre
+  //Use selectoy le pide que todo lo que tenga en estado global. y el userID es del padre
   const userId = useSelector(getUserId);
   console.log("Id padre", userId);
   console.log("Id nannie", nannyId);

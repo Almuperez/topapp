@@ -92,8 +92,8 @@ const Menu = () => (
           </Link>
         </li>
         <li className="nav-item">
-          <Link href="/admin">
-            <a className="nav-link">Admin</a>
+          <Link href="/match">
+            <a className="nav-link">Tu match</a>
           </Link>
         </li>
       </ul>

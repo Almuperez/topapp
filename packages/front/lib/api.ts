@@ -57,6 +57,12 @@ export const newMatch = async (data) => {
   return res.data;
 };
 
+export const getMatchs = async () => {
+  const res = await api.get("/match");
+  console.log(res);
+  return res.data;
+};
+
 // export const getOneNanny = async (id) => {
 //   const res = await api.get(`/nanny/${id}`);
 // };

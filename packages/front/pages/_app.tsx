@@ -1,11 +1,14 @@
 import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { UserProvider } from "@auth0/nextjs-auth0";
+import { SWRConfig } from "swr";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
 import configureStore from "../lib/redux/store";
-import PrimaryLayout from "../components/layouts/PrimaryLayout";
+import PrimaryLayout from "../components/base/layouts/PrimaryLayout";
+
+import { fetcher } from "../lib/fetcher";
 
 const { store, persistor } = configureStore();
 
@@ -19,6 +22,12 @@ const MyApp = ({ Component, pageProps, router, initialUser, hello }) => {
     // engloba la app bajo redux
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
+        {/* <SWRConfig>
+          value=
+          {{
+            refreshInterval: 3000,
+            fetcher,
+          }} */}
         {/* //toda la app esta englobada por userProvider que lo da auth0 */}
         <UserProvider user={initialUser}>
           {/* //PrimaryLayaout es donde generemos todo el menu  */}
@@ -60,6 +69,7 @@ const MyApp = ({ Component, pageProps, router, initialUser, hello }) => {
             </main>
           </PrimaryLayout>
         </UserProvider>
+        {/* </SWRConfig> */}
       </PersistGate>
     </Provider>
   );

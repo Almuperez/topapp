@@ -15,11 +15,6 @@ const IndexPage = () => (
     <Button variant="contained" color="success" href="/guarderia">
       Soy guardería
     </Button>
-
-    {/* <img
-      alt=""
-      src="https://img.remediosdigitales.com/2605b3/colegio/450_1000.jpg"
-    /> */}
   </div>
 );
 
