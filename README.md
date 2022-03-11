@@ -105,13 +105,13 @@ API- modelos y CRUD
 [Documentación Postamn](https://www.postman.com/)
 * Auth0:
 [Documentación Auth0](https://auth0.com/)
-*Mongoose:
+* Mongoose:
 [Documentación Mongoose](https://mongoosejs.com/docs)
-*Fastify:
+* Fastify:
 [Documentacion Fastify](https://www.fastify.io/)
-*Next getting started
+* Next getting started
 [Documentación Nextjs](https://nextjs.org/docs/getting-started)
-*npm para entender paquetes:
+* npm para entender paquetes:
 [Página principal npm](https://www.npmjs.com/)
 [Redux](https://www.npmjs.com/package/redux)
 
