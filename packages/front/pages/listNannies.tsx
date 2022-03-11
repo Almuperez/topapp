@@ -1,15 +1,15 @@
 import React from "react";
 
 import Nannies from "../components/NanniesList";
+import { Heading, Stack, Container, Text, Button } from "@chakra-ui/react";
 
 const ListNannies = () => (
   <div>
-    <h2>Revisa y elige con quien haces Match </h2>
+    <Heading margin="15" as="h4" size="md" color="#322659">
+      <Text as="em"> Bienvenido a Topapp, te ayudamos a conciliar </Text>
+    </Heading>
 
-    {/* <List /> */}
     <Nannies />
-    {/* 
-    <Button variant="outlined">Match</Button> */}
   </div>
 );
 

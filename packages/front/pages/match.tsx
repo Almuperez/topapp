@@ -1,12 +1,21 @@
 import React from "react";
 import Matchs from "../components/MatchList";
+import { Heading, Stack, Container, Text, Button } from "@chakra-ui/react";
 
 const ListMatch = () => (
-  <div>
-    <h2>Contacta con tu match</h2>
+  <Container
+    padding="-5"
+    maxW="container.sm"
+    color="#44337A"
+    border="2px"
+    borderColor="#322659"
+  >
+    <Heading margin="15" as="h4" size="md" color="#322659">
+      <Text as="em">Contacta con tu match</Text>
+    </Heading>
 
     <Matchs />
-  </div>
+  </Container>
 );
 
 export default ListMatch;

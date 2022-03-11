@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import { getNannies } from "../lib/api";
 import ItemNannie from "./ItemNanny";
+import { Heading, Stack, Container, Text, Button } from "@chakra-ui/react";
 
 const Nannies = () => {
   const [nannies, setNannies] = useState([]);
@@ -22,9 +23,9 @@ const Nannies = () => {
   return (
     <Card className="card">
       <div className="card-body">
-        <h3 className="card-title">
-          TENEMOS UN TOTAL DE {nannies.length} NANNIES
-        </h3>
+        <Heading margin="15" as="h4" size="md" color="#322659">
+          <Text as="em">Tenemos un totlal de {nannies.length} nannies</Text>
+        </Heading>
         <p className="card-text"></p>
         {nannies.map((nanny) => {
           console.log("one nanny ==>", nanny);
@@ -48,3 +49,7 @@ const Nannies = () => {
 };
 
 export default Nannies;
+
+<Heading margin="15" as="h4" size="md" color="#322659">
+  <Text as="em">Bienvenido a Topapp, te ayudamos a conciliar</Text>
+</Heading>;

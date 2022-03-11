@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getMatchs } from "../lib/api";
 import { Card } from "react-bootstrap";
 import ItemMatch from "./ItemMatch";
+import { Heading, Stack, Container, Text, Button } from "@chakra-ui/react";
+import { MdCall } from "react-icons/md";
 
 const Matchs = () => {
   const [matchs, setMatchs] = useState([]);
@@ -19,9 +21,9 @@ const Matchs = () => {
   return (
     <Card className="card">
       <div className="card-body">
-        <h3 className="card-title">
-          TENEMOS UN TOTAL DE {matchs.length} NANNIES
-        </h3>
+        <Heading margin="15" as="h4" size="md" color="#322659">
+          <Text as="em">Contacta con tu macth</Text>
+        </Heading>
         <p className="card-text"></p>
         {matchs.map((match) => {
           console.log("one match ==>", match);
@@ -36,9 +38,16 @@ const Matchs = () => {
             />
           );
         })}
+        <Stack direction="row" spacing={4}>
+          <Button rightIcon={<MdCall />} colorScheme="blue" variant="outline">
+            Call nanny
+          </Button>
+        </Stack>
       </div>
     </Card>
   );
 };
+
+<Matchs />;
 
 export default Matchs;

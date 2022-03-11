@@ -29,9 +29,9 @@ const ItemMatch = ({
   return (
     <div>
       <p>Name: {name} </p>
-      <p>nannyId:{nannyId}</p>
+      {/* <p>nannyId:{nannyId}</p>
       <p>kindergardenId:{kindergardenId}</p>
-      <p>parentId:{parentId}</p>
+      <p>parentId:{parentId}</p> */}
       <p>totalPrice:{totalPrice}</p>
       <p>hasContact:{hasContacted ? "si" : "no"} </p>
       <p>hasBooked:{hasBooked ? "si" : "no"}</p>

@@ -7,7 +7,7 @@ import data from "../pages/api/nanny";
 
 const ItemWrap = styled.div`
   padding: 4px;
-  border: 1px solid palevioletred;
+  border: 1px solid fuchsia;
   margin: 5px;
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@ const Button = styled.button`
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid fuchsia;
   border-radius: 3px;
 `;
 
@@ -55,7 +55,7 @@ const ItemNannie = ({
   phone,
   email,
 }: ItemProps) => {
-  //Use selectoy le pide que todo lo que tenga en estado global. y el userID es del padre
+  //UseSelector le pide que todo lo que tenga en estado global. y el userID es del padre
   const userId = useSelector(getUserId);
   console.log("Id padre", userId);
   console.log("Id nannie", nannyId);

@@ -3,7 +3,7 @@ import Link from "next/Link";
 import { Navbar } from "react-bootstrap";
 
 const Menu = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
     <Link href="/">
       <a className="navbar-brand">Home</a>
     </Link>
@@ -39,7 +39,7 @@ const Menu = () => (
         </li>
       </ul>
     </div>
-  </nav>
+  </Navbar>
 );
 
 export default Menu;

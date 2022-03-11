@@ -1,16 +1,13 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import Kindergardens from "../components/KindergardenList";
-import { Card } from "react-bootstrap";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Text } from "@chakra-ui/react";
 
 const ListKindergardens = () => (
   <div>
-    {/* <Heading margin="40" as="h4" size="md" color="grey">
-      Revisa y elige con quien haces Match
-    </Heading> */}
-    <Kindergardens />
-    <Button variant="outlined">Match</Button>
+    <Heading margin="15" as="h4" size="md" color="#322659">
+      <Text as="em">Revisa y elige con quien haces Match</Text>
+    </Heading>
+    {/* <Kindergardens /> */}
   </div>
 );
 

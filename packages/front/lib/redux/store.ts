@@ -6,16 +6,9 @@ import storage from "redux-persist/lib/storage";
 
 const initState = {
   user: { id: null, name: "" },
-  // match: [
-  //   {
-  //     _id: 0,
-  //     nannyId: "",
-  //     parentId: "",
-  //   },
-  // ],
 };
 
-//action type DEFINIFO EN LINEA 30
+//action type DEFINIDO EN LINEA 30
 const ADD_USER_INFO = "user/addUserInfo";
 
 //la raiz del redux. Esta funcion para decir lo que voy hacer con el estado
@@ -35,7 +28,7 @@ function rootReducer(state = initState, action) {
       return state;
   }
 }
-//hago esta funcion para el action creator: crear la accion para llamarlo desde thunk. siempre va necesitar un type y una variable que es accion (en este caso userid y name)
+//hago esta funcion para el action creator:. siempre va necesitar un type y una variable que es accion (en este caso userid y name)
 export const addUserInfo = ({ userId, name }) => ({
   type: ADD_USER_INFO,
   userId,

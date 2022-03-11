@@ -1,8 +1,8 @@
 import React from "react";
 import { useUser } from "@auth0/nextjs-auth0";
-import Button from "@mui/material/Button";
 import ParentForm from "./form/ParentForm";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Stack, Container, Text, Button } from "@chakra-ui/react";
+import Link from "next/link";
 
 const ButtonNav = () => {
   const { user } = useUser();
@@ -10,8 +10,8 @@ const ButtonNav = () => {
 
   return (
     <div>
-      <Heading margin="40" as="h4" size="md" color="grey">
-        Soy padre y busco conciliar
+      <Heading margin="15" as="h4" size="md" color="#322659">
+        <Text as="em">Soy padre y busco conciliar</Text>
       </Heading>
       {!user && (
         <a
@@ -25,43 +25,46 @@ const ButtonNav = () => {
 
       {user && (
         <>
-          <ParentForm />
-          <div>
-            <a
-              style={{ margin: "5px" }}
-              href="/child"
-              className="btn btn-outline-info"
+          <Container
+            padding={50}
+            maxW="container.sm"
+            color="#44337A"
+            border="2px"
+            borderColor="#322659"
+          >
+            <ParentForm />
+          </Container>
+          <Stack
+            margin="50"
+            padding={100}
+            direction="row"
+            spacing={50}
+            align="center"
+          >
+            <Button borderRadius="md" variant="info" bg="#553C9A" color="white">
+              <Link href="/child"> Rellena formulario hijo</Link>
+            </Button>
+
+            <Button
+              borderRadius="md"
+              variant="info"
+              bg="#E9D8FD"
+              color="#553C9A"
             >
-              Rellenar formulario hijo
-            </a>
-          </div>
+              <Link href="/listNannies"> Buscar nanny </Link>
+            </Button>
+            <Button
+              borderRadius="md"
+              variant="info"
+              bg="#D6BCFA"
+              color="#44337A"
+            >
+              <Link href="/listKindergarden">Buscar guardería</Link>
+            </Button>
+          </Stack>
         </>
       )}
     </div>
   );
 };
 export default ButtonNav;
-
-// const IndexPage = () => (
-//   <StyleDiv>
-//     <Card border="info" style={{ width: "40rem" }}>
-//       <Heading margin="40" as="h4" size="md" color="grey">
-//         Bienvenido a Topapp, te ayudamos a conciliar
-//       </Heading>
-
-//       <Stack margin="40" direction="row" spacing={50} align="center">
-//         <Button borderRadius="md" variant="info" bg="pink" color="white">
-//           <Link href="/padres"> Soy padre </Link>
-//         </Button>
-//         <Button borderRadius="md" variant="info" bg="white" color="white">
-//           <Link href="/nanny">Soy nanny</Link>
-//         </Button>
-//         <Button borderRadius="md" bg="white" color="white">
-//           <Link href="/guarderia">Soy guardería</Link>
-//         </Button>
-//       </Stack>
-//     </Card>
-//   </StyleDiv>
-// );
-
-// export default IndexPage;

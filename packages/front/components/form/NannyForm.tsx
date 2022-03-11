@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { addNanny } from "../../lib/api";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from "@chakra-ui/react";
 
 const NannyForm = () => {
   const [item, setItem] = useState();
@@ -18,7 +24,7 @@ const NannyForm = () => {
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <FormControl onSubmit={handleSubmit(onSubmit)}>
       <input
         type="text"
         placeholder="First name"
@@ -70,7 +76,7 @@ const NannyForm = () => {
       <button onClick={onSubmit} type="button">
         Add nanny
       </button>
-    </form>
+    </FormControl>
   );
 };
 
